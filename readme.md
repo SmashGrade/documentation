@@ -1,5 +1,5 @@
 # Introduction
-This is the technical documentation for the SmashGrade Application written in Markdown and served by [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/). The current documentation can be viewed at: https://smashgrade.github.io/Documentation
+This is the technical documentation for the SmashGrade Application written in Markdown and served by [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/). The current documentation can be viewed at: https://smashgrade.github.io/documentation
 
 ## How to run/view the documentation locally
 You can edit and view the markdown files in any editor or on GitHub directly. However, to access extended markdown features such as tabs and "Wiki Functionality" for navigation and search, you must serve the documentation with [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/getting-started/). To know how the additional syntax and the features of Material for MkDocs work please check [their documentation](https://squidfunk.github.io/mkdocs-material/reference/).
