@@ -1,5 +1,5 @@
 ---
-title: Solution strategy
+title: 04 Solution strategy
 ---
 
 # Solution strategy
