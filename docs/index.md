@@ -1,4 +1,4 @@
-# Smash Grade
+# Welcome message
 Welcome, fellow architects, to the fascinating world of 'Smash Grade'! 
 
 Imagine a Swiss timepiece meticulously designed with intricate precision, our application is no different — a harmonious blend of technology and innovation. 
@@ -11,4 +11,4 @@ embodies the digital essence of tracking your technical school marks with Swiss 
 🚀 Let's embark on this riveting journey together!
 
 
-![Smash Grade Logo](docs/assets/brand/android-chrome-512x512.png)
+![Smash Grade Logo](../assets/brand/android-chrome-512x512.png)
