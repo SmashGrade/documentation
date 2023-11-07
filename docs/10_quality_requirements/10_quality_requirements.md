@@ -1,5 +1,5 @@
 ---
-title: 10 Quality requirements
+title: Quality requirements
 ---
 
 # Quality requirements

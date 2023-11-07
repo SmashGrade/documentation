@@ -1,5 +1,5 @@
 ---
-title: 06 Runtime view
+title: Runtime view
 ---
 
 # Runtime view

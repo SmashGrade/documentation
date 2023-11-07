@@ -1,5 +1,5 @@
 ---
-title: 02 Architecture constraints
+title: Architecture constraints
 ---
 
 # Architecture constraints

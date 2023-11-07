@@ -1,5 +1,5 @@
 ---
-title: 08 Crosscutting concepts
+title: Crosscutting concepts
 ---
 
 # Crosscutting concepts

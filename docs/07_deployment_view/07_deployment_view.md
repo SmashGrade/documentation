@@ -1,5 +1,5 @@
 ---
-title: 07 Deployment view
+title: Deployment view
 ---
 
 # Deployment view
