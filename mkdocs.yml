@@ -1,15 +1,20 @@
 site_name: SmashGrade Docs
 theme:
   name: material
+  logo: assets/brand/android-chrome-512x512.png
+  favicon: assets/brand/favicon.ico
   features:
     - navigation.footer
     - content.code.copy
     - content.code.annotate
     - search.suggest
+    - content.tooltips
   palette:
     # Palette toggle for light mode
     - media: "(prefers-color-scheme: light)"
       scheme: default
+      primary: pink
+      accent: red
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
@@ -17,6 +22,8 @@ theme:
     # Palette toggle for dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
+      primary: pink
+      accent: red
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
@@ -42,4 +49,3 @@ markdown_extensions:
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - pymdownx.superfences
-

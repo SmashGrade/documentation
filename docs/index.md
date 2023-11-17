@@ -1,17 +1,14 @@
-# Welcome to MkDocs
+# Welcome message
+Welcome, fellow architects, to the fascinating world of 'Smash Grade'! 
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org) and 
+Imagine a Swiss timepiece meticulously designed with intricate precision, our application is no different — a harmonious blend of technology and innovation. 
 
-## Commands
+As you delve into the **arc42 software documentation**, prepare to unlock the secrets behind this marvel, akin to the intricate gears of a watch, where every component seamlessly aligns to bring your academic journey to life. 
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+Get ready to explore how 'Smash Grade' transcends the mundane and 
+embodies the digital essence of tracking your technical school marks with Swiss precision! 
 
-## Project layout
+🚀 Let's embark on this riveting journey together!
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+
+![Smash Grade Logo](../assets/brand/android-chrome-512x512.png)
