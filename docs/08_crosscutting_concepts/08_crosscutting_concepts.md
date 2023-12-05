@@ -93,7 +93,7 @@ We developed the color scheme according to the HFTM corporate design.
 
 | Primary & Secondary   | Background & Neutrals  |
 | -------------- | --------- | 
-| ![image](.\assets\08_crosscutting_concepts\primary-secondary-color.png)| ![image](.\assets\08_crosscutting_concepts\background-color.png) | 
+| ![image](..\assets\crosscutting_concepts\primary-secondary-color.png)| ![image](..\assets\crosscutting_concepts\background-color.png) | 
 
 
 
