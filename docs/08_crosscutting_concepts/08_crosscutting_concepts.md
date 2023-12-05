@@ -14,13 +14,13 @@ For the UI components:<br>
 https://ant.design/components/overview/
 
 For routing: <br>
-https://reactrouter.com/
+https://tanstack.com/router/v1
 
 I18N Internationalization: <br>
 https://react.i18next.com/
 
 MSAL User authentication: <br>
-https://github.com/microsoft/Federal-App-Innovation-Community/tree/main/topics/modern-auth/React-MSAL-AAD
+https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-react
 
 
 ### 8.3 User Interface
@@ -43,7 +43,7 @@ body {
 ```
 
 #### Colors Module SCSS
-So that colors for backgrounds, buttons and validators have the same colors on all pages, a Colors module is also created in which the standard colors can be recorded and reused.
+So that colors for backgrounds, buttons and other UI components have the same colors on all pages, a Colors module is also created in which the standard colors can be recorded and reused.
 
 Example:
 ```scss
@@ -79,21 +79,21 @@ $colorRatingMedian: #ffd76f;
 #### Color Schema
 We developed the color scheme according to the HFTM corporate design.
 
-| Farbvariable   | Hex-Wert  |
+| Color variable   | Hex-Value  |
 | -------------- | --------- | 
-| Primary        | `#C6264E` | 
-| On Primary     | `#FFFFFF` | 
-| Secondary      | `#95223F` | 
-| On Secondary   | `#FFFFFF` | 
-| Background     | `#E4E4E4` | 
-| On Background  | `#3D3D3C` |
-| Neutral 300    | `#f2f2f2` | 
-| Neutral 200    | `#f9f9f9` | 
+| <span style="color:#C6264E">Primary</span> | `#C6264E` | 
+| <span style="color:#FFFFFF">On Primary</span> | `#FFFFFF` | 
+| <span style="color:#95223F">Secondary</span> | `#95223F` | 
+| <span style="color:#FFFFFF">On Secondary</span> | `#FFFFFF` | 
+| <span style="color:#E4E4E4">Background</span> | `#E4E4E4` | 
+| <span style="color:#3D3D3C">On Background</span> | `#3D3D3C` |
+| <span style="color:#f2f2f2">Neutral 300</span> | `#f2f2f2` | 
+| <span style="color:#f9f9f9">Neutral 200</span> | `#f9f9f9` | 
 
 
-| primary & secondary   | background & neutrals  |
+| Primary & Secondary   | Background & Neutrals  |
 | -------------- | --------- | 
-| ![image](.\primary-secondary-color.png)| ![image](.\background-color.png) | 
+| ![image](.\assets\08_crosscutting_concepts\primary-secondary-color.png)| ![image](.\assets\08_crosscutting_concepts\background-color.png) | 
 
 
 
@@ -145,69 +145,4 @@ Due to the amount of work involved, we will initially avoid unit tests and rely 
 
 
 To test the different roles you can use the follwing script:
-```PowerShell
-# Define the user and application (replace with your values)
-Install-Module AzureAD
-```
-```PowerShell
-Connect-AzureAD
-$app_role_name = "Kurs Admin" # Dozent | Kurs Admin | Student
-$mail = "wanja.bachmann@hftm.ch"
-
-$user = Get-AzureADUser -ObjectId $mail
-$userdisplayname = (Get-AzureADUser -ObjectId $mail).displayname
-$app_name = "transfer2023-smashgrade"
-$appRegistrationObjectId = (Get-AzureADApplication -Filter "DisplayName eq 'transfer2023-smashgrade'").ObjectId
-
-
-# Roles
-# $user = Get-AzureADUser -ObjectId "$username"
-$sp = Get-AzureADServicePrincipal -Filter "displayName eq '$app_name'"
-$appRole = $sp.AppRoles | Where-Object { $_.DisplayName -eq $app_role_name }
-
-# Get the App Role assignments for the user
-$rmAppRoleAssignments = 
-	Get-AzureADUserAppRoleAssignment -ObjectId $user.ObjectId |`
-	Where-Object {($_.ResourceDisplayName -eq $app_name) -and ($_.PrincipalDisplayName -eq $userdisplayname)}
-
-# Remove all direct assignments
-foreach($assignment in $rmAppRoleAssignments){
-	Remove-AzureADUserAppRoleAssignment -ObjectId $user.objectId -AppRoleAssignmentId $assignment.objectId
-}
-
-# Assign the user to the app role
-New-AzureADUserAppRoleAssignment -ObjectId $user.ObjectId -PrincipalId $user.ObjectId -ResourceId $sp.ObjectId -Id $appRole.Id
-
-# Get the App Role assignments for the user
-$appRoleAssignments = 
-	Get-AzureADUserAppRoleAssignment -ObjectId $user.ObjectId |`
-	Where-Object {$_.ResourceDisplayName -eq $app_name}
-
-# Create a dictionary to map App Role Id to Description
-$roleDescriptions = @{}
-$sp.AppRoles | ForEach-Object { 
-	$roleDescriptions[$_.Id] = $_.Description 
-}
-
-# Initialize an array to store the results
-$results = @()
-
-# Loop through each App Role assignment
-foreach ($assignment in $appRoleAssignments) {
-    $roleDescription = $roleDescriptions[$assignment.Id]
-    
-    # Create a custom object with the App Role Description
-    $result = [PSCustomObject]@{
-        "RoleDescription" = $roleDescription
-        "PrincipalDisplayName" = $assignment.PrincipalDisplayName
-        "PrincipalType" = $assignment.PrincipalType
-        "ResourceDisplayName" = $assignment.ResourceDisplayName
-        "CreationTimestamp" = $assignment.CreationTimestamp
-    }
-    # Add the result to the array
-    $results += $result
-}
-
-# Display the results
-$results | Format-Table -AutoSize
-```
+https://github.com/SmashGrade/SmashGrade-App/wiki/Entra-ID-Authentication
