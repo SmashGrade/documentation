@@ -14,4 +14,3 @@ After careful consideration, our team has decided to implement the Gitflow Workf
 **Feature Branches**: These branches, typically prefixed with feat, are used for developing new features. Each feature branch is created from the develop branch and is merged back into develop once the feature is complete.
 
 For further information, please see [Gitflow Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)
-
