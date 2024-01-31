@@ -50,10 +50,5 @@ markdown_extensions:
   - pymdownx.tabbed:
       alternate_style: true
   - pymdownx.inlinehilite
-  - pymdownx.snippets:
-      auto_append:
-        - includes/abbreviations.md
+  - pymdownx.snippets
   - pymdownx.superfences
-
-watch:
-  - includes
