@@ -1,23 +1,35 @@
-name: Deploy MkDocs Site to GitHub Pages
+name: Build and Deploy MkDocs Site
+
 on:
   push:
     branches:
       - main
+  pull_request:
+
 permissions:
   contents: write
+
 jobs:
-  deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+
       - uses: actions/setup-python@v4
         with:
           python-version: 3.x
+
       - uses: actions/cache@v2
         with:
           key: ${{ github.ref }}
           path: .cache
+
       - run: |
-          python -m pip install --upgrade pip  # Upgrades pip
-          pip install -r requirements.txt      # Installs dependencies from requirements.txt
-      - run: mkdocs gh-deploy --force
+          python -m pip install --upgrade pip # upgrade pip
+          pip install -r requirements.txt # Installs dependencies from requirements.txt
+          mkdocs build # create build for site
+
+      # Conditional step for deployment
+      - name: Deploy to GitHub Pages
+        if: github.ref == 'refs/heads/main'
+        run: mkdocs gh-deploy --force
