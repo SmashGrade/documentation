@@ -66,18 +66,3 @@ Based on the comparison on the page https://tanstack.com/router/v1/docs/comparis
 The documentation can be found here:
 https://tanstack.com/router/v1/docs/guide/routes
 
-## Authentication
-### Question
-Which identity provider should be integrated?
-In order to be able to cover the requirements and also cover topics such as the OWASP recommendations, an Entra ID integration is recommended.
-
-### Decision
-* Users can use their existing HFTM login, no additional account is required.
-* Accordingly, we can also manage the application roles here in the Enterprise Application in Azure.
-* With Conditional Access, OWASP recommendations such as MFA could also be implemented.
-
-That's why we decided on Azure EntraID.
-
-### Usage
-A details description about the setup can be found here:<br>
-https://github.com/microsoft/Federal-App-Innovation-Community/tree/main/topics/modern-auth/React-MSAL-AAD
