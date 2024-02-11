@@ -32,8 +32,8 @@ We recommend a dynamic Entra ID group for Student and Dozent based on the JobTit
 | Fachbereichsleiter | Early identification of students with low or insufficient grades. |
 
 
-## OWASP Top 10: Authentication
-We have made the following recommendations and considerations regarding the Authtentication category. <br>
+## OWASP Top 10: A07 Authentication
+We have made the following recommendations and considerations regarding the category: "A07:2021 – Identification and Authentication Failures"<br>
 https://owasp.org/Top10/A07_2021-Identification_and_Authentication_Failures/ 
 
 __Where possible, implement multi-factor authentication to prevent automated credential stuffing, brute force, and stolen credential reuse attacks.__
@@ -79,3 +79,26 @@ Limit or increasingly delay failed login attempts, but be careful not to create 
 Microsoft Entra ID Protection which helps organizations detect, investigate, and remediate identity-based risks. 
 These identity-based risks can be further fed into Conditional Access to make access decisions.
 More info: https://learn.microsoft.com/en-us/entra/id-protection/overview-identity-protection*
+
+
+## OWASP Top 10: A09 Security Logging and Monitoring Failures<br>
+We have made the following recommendations and considerations regarding the category: "A09:2021 – Security Logging and Monitoring Failures"<br>
+
+__Ensure all login, access control, and server-side input validation failures can be logged with sufficient user context to identify suspicious or malicious accounts and held for enough time to allow delayed forensic analysis.__ <br> 
+__Ensure that logs are generated in a format that log management solutions can easily consume.__
+<br><br>
+*The sign in logs can be viewed within 30 days in the portal.
+The logs are easiliy available thorugh the Entra ID portal:*
+![EnterpriseApplicationSignInLogs](../assets/architecture_decisions/EnterpriseApplication-SignInLogs-Details.png)
+
+__Ensure log data is encoded correctly to prevent injections or attacks on the logging or monitoring systems.__ <br>
+__Ensure high-value transactions have an audit trail with integrity controls to prevent tampering or deletion, such as append-only database tables or similar.__<br><br>
+*The log data is managed by Microsoft Entra ID itself and is therefore not part of our application itself.*
+
+__DevSecOps teams should establish effective monitoring and alerting such that suspicious activities are detected and responded to quickly.__<br><br>
+*The Microsoft Identity Protection allows automatic remediation to be applied to suspicious actions.*
+https://learn.microsoft.com/en-us/entra/id-protection/overview-identity-protection
+
+*For deeper analysis and monitoring the Sentinel built-in connector can be added to collect data from Microsoft Entra ID. The corresponding data can then be further evaluated using a KQL Query. If necessary, alerts can also be generated.*
+*More info: https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/signinlogs
+https://learn.microsoft.com/en-us/azure/sentinel/connect-azure-active-directory*
