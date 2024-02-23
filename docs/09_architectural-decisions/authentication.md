@@ -16,7 +16,7 @@ That's why we decided on Azure EntraID.
 
 ## Usage
 A details description about the setup can be found here:<br>
-https://github.com/microsoft/Federal-App-Innovation-Community/tree/main/topics/modern-auth/React-MSAL-AAD
+[React-MSAL-AAD](https://github.com/microsoft/Federal-App-Innovation-Community/tree/main/topics/modern-auth/React-MSAL-AAD)
 
 
 ## Permission Schema
@@ -33,8 +33,8 @@ We recommend a dynamic Entra ID group for Student and Dozent based on the JobTit
 
 
 ## OWASP Top 10: A07 Authentication
-We have made the following recommendations and considerations regarding the category: "A07:2021 – Identification and Authentication Failures"<br>
-https://owasp.org/Top10/A07_2021-Identification_and_Authentication_Failures/ 
+We have made the following recommendations and considerations regarding the category: "[A07_2021-Identification_and_Authentication_Failures](https://owasp.org/Top10/A07_2021-Identification_and_Authentication_Failures/)"<br>
+
 
 __Where possible, implement multi-factor authentication to prevent automated credential stuffing, brute force, and stolen credential reuse attacks.__
 <br><br>
@@ -56,21 +56,21 @@ __Implement weak password checks, such as testing new or changed passwords again
 <br>
 *Custom banned password list:* <br>
 *Some organizations want to improve security and add their own customizations on top of the global banned password list.*<br><br>
-*More info: https://learn.microsoft.com/en-us/entra/identity/authentication/concept-password-ban-bad*
+*More info: [concept-password-ban-bad](https://learn.microsoft.com/en-us/entra/identity/authentication/concept-password-ban-bad)*
 
 
 __Align password length, complexity, and rotation policies with National Institute of Standards and Technology (NIST) 800-63b's guidelines in section 5.1.1 for Memorized Secrets or other modern, evidence-based password policies.__
 <br><br>
 *As far as we know, password rotation is not yet in use, but it could be implemented using Microsoft Entra Password Policy.*
 <br><br>
-*More info: https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-policy#set-or-check-the-password-policies-by-using-powershell*
+*More info: [set-or-check-the-password-policies-by-using-powershell](https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-policy#set-or-check-the-password-policies-by-using-powershell)*
 
 
 __Ensure registration, credential recovery, and API pathways are hardened against account enumeration attacks by using the same messages for all outcomes. 
 Limit or increasingly delay failed login attempts, but be careful not to create a denial of service scenario. Log all failures and alert administrators when credential stuffing, brute force, or other attacks are detected.__
 <br><br>
 *To protect against account enumeration attacks, we would recommend activating Smart Password Lockout if this is not already implemented. Smart Lock helps to lock out bad actors who might try to guess your users passwords or use brute force methods to get in.*<br>
-*More info: https://learn.microsoft.com/en-us/entra/identity/authentication/howto-password-smart-lockout*
+*More info: [howto-password-smart-lockout](https://learn.microsoft.com/en-us/entra/identity/authentication/howto-password-smart-lockout)*
 
 *The login logging can be viewed directly via the Enterprise Application. Filters for interrupted or failed registrations can also be set accordingly.*
 ![EnterpriseApplicationSignInLogs](../assets/architecture_decisions/EnterpriseApplication-SignInLogs.png)
@@ -78,7 +78,7 @@ Limit or increasingly delay failed login attempts, but be careful not to create 
 *For additional analysis and remediation of the registration, the whole thing can be rounded off with 
 Microsoft Entra ID Protection which helps organizations detect, investigate, and remediate identity-based risks. 
 These identity-based risks can be further fed into Conditional Access to make access decisions.
-More info: https://learn.microsoft.com/en-us/entra/id-protection/overview-identity-protection*
+More info: [overview-identity-protection](https://learn.microsoft.com/en-us/entra/id-protection/overview-identity-protection)*
 
 
 ## OWASP Top 10: A09 Security Logging and Monitoring Failures<br>
@@ -96,9 +96,11 @@ __Ensure high-value transactions have an audit trail with integrity controls to 
 *The log data is managed by Microsoft Entra ID itself and is therefore not part of our application itself.*
 
 __DevSecOps teams should establish effective monitoring and alerting such that suspicious activities are detected and responded to quickly.__<br><br>
-*The Microsoft Identity Protection allows automatic remediation to be applied to suspicious actions.*
-https://learn.microsoft.com/en-us/entra/id-protection/overview-identity-protection
+*The Microsoft Identity Protection allows automatic remediation to be applied to suspicious actions.
+[overview-identity-protection](https://learn.microsoft.com/en-us/entra/id-protection/overview-identity-protection)*
 
-*For deeper analysis and monitoring the Sentinel built-in connector can be added to collect data from Microsoft Entra ID. The corresponding data can then be further evaluated using a KQL Query. If necessary, alerts can also be generated.*
-*More info: https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/signinlogs
-https://learn.microsoft.com/en-us/azure/sentinel/connect-azure-active-directory*
+*For deeper analysis and monitoring the Sentinel built-in connector can be added to collect data from Microsoft Entra ID. The corresponding data can then be further evaluated using a KQL Query. If necessary, alerts can also be generated.*<br>
+<br>
+*More info: <br>
+[signinlogs](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/signinlogs)<br>
+[connect-azure-active-directory](https://learn.microsoft.com/en-us/azure/sentinel/connect-azure-active-directory)*
