@@ -1,9 +1,12 @@
 ---
-title: Authentication decisions
+title: ADR-04 Authentication decisions
 ---
 
 # Authentication decisions
-## Question
+
+## Status - Accepted 🟢
+
+## Context
 Which identity provider should be integrated?
 In order to be able to cover the requirements and also cover topics such as the OWASP recommendations, an Entra ID integration is recommended.
 
@@ -14,7 +17,7 @@ In order to be able to cover the requirements and also cover topics such as the 
 
 That's why we decided on Azure EntraID.
 
-## Usage
+## Consequences
 A details description about the setup can be found here:<br>
 [React-MSAL-AAD](https://github.com/microsoft/Federal-App-Innovation-Community/tree/main/topics/modern-auth/React-MSAL-AAD)
 
