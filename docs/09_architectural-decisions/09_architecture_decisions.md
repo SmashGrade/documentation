@@ -1,8 +1,35 @@
 ---
 title: Architecture decisions
 ---
-
 # Architecture decisions
+## Frontend Components Overview
+The diagram illustrates the architecture of a frontend application, highlighting its key building blocks and technologies:
+* React for the frontend framework
+* i18 for internationalization
+* Translations module for managing translations
+* TransStack Routing for routing 
+* Authentication module for user authentication, MSAL (Microsoft Authentication Library)
+* Ant Design (AntD) for the UI framework
+* Axios for handling HTTP requests
+* Zod for data validation
+
+
+```mermaid
+graph TD;
+  subgraph "React Frontend"
+    
+    App -->|Internationalization| react-intl
+    App -->|Routing| TanStack
+    App -->|Authentication| MSAL
+    App -->|Data Fetching| axios
+    App -->|UI Components Library| AntD
+    App -->|Data Validation| zod
+    
+    App -->|Code Formatting| Prettier[.prettierrc.js]
+    App -->|Build Tool| Vite[vite.config.js]
+    App -->|Git Hooks| Husky[husky.config.js]
+  end
+```
 
 ## Internationalization
 
