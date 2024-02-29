@@ -11,4 +11,4 @@ embodies the digital essence of tracking your technical school marks with Swiss 
 🚀 Let's embark on this riveting journey together!
 
 
-![Smash Grade Logo](../assets/brand/android-chrome-512x512.png)
+![Smash Grade Logo](./assets/brand/android-chrome-512x512.png)

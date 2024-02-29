@@ -1,26 +1,49 @@
 ---
-title: ADR-02 Backend Go testing
+title: ADR-02 Internationalization
 ---
 
-# ADR-02 Backend Go testing
+# Internationalization
+
+## Status - Accepted 🟢
 
 ## Context
-
-Our backend is compromised out of different submodules.
-We need a strategy to minimize time to identify and fix software bugs.
+There should be the possibility of internationalization for the UI. But which module should we use?
 
 ## Decision
+The following table serves as a quick comparison of 5 of the most popular I18N solutions for React:
 
-We create a test file for each file in our code. 
+| Name | Stars | Forks | Contributors | Commits | Alter | Snyk Score |
+| --- |-------|-------|--------------|---------|---------|------------|
+| react-i18next | 8.5k  | 1k    | 177          | 1'630   | 8 years | 94/100     |
+| FormatJS | 13.9k | 1.4k  | 283          | 4'688   | 9 years | 98/100     |
+| react-native-localization | 893   | 120   | 41           | 239     | 8 years | 73/100     |
+| typesafe-i18n | 1.8k  | 65    | 33           | 1'582   | 3 years | 81/100     |
+| js-lingui | 3.9k  | 354 | 188 | 2'283   | 6 years | 95/100     |
 
-We use the standard file ending of '_test.go' for the test file as it is described in [the official tutorial](https://go.dev/doc/tutorial/add-a-test).
+The current downloads of the packages can be seen under the following link:
+[Link](https://npmtrends.com/@lingui/react-vs-react-i18next-vs-react-intl-vs-react-native-localization-vs-typesafe-i18n) 
+Based on this comparison and the number of downloads, we decided to analyze `react-i18next` and `react-intl` in more detail.
 
-## Status
-
-Draft
+We recommend using `react-intl` as the included functionality is sufficient for our project out-of-the-box and the bundle size is comparatively smaller.
 
 ## Consequences
+Under [FormatJS Components](https://formatjs.io/docs/react-intl/components) und [FormatJS Imperative API](https://formatjs.io/docs/react-intl/api) are the most important components and functions  described.
 
-Finding bugs earlier in the development lifecycle.
+Use the components by default if possible. If the translation cannot be implemented with components, you have to use the `useIntl()` function.
+The following three properties must always be set within the translation:
+- `id`: Should be given in the context of the translation
+- `defaultMessage`: The fallback translation, always specified in German
+- `description`: A detailed description of the translation in German
 
-More time used per function because of the tests that have to be written for it.
+Extract translation:  
+```shell
+npm run extract-de # extract German messages
+npm run extract-en # extract English messages
+npm run extract-fr # extract French messages
+```
+Compile tranlsation:  
+```shell
+npm run compile-de # compile German messages
+npm run compile-en # compile English messages
+npm run compile-fr # compile French messages
+```
