@@ -44,7 +44,7 @@ More time used on decisions because of the additional documentation effort neede
 
 # Titel
 
-## Status - (🟡 Draft | 🟢 Accepted | 🔴 Obsolete)
+## Status - (Draft 🟡 |  Accepted 🟢 |  Obsolete 🔴)
 
 ## Context
 
