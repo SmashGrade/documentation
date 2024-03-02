@@ -14,21 +14,15 @@ This diagram describes the subsystems needed in context of a frontend applicatio
 * Database: The system storing application data accessed and manipulated by the backend API.
 
 ```mermaid
-C4Context
-    title System Context Diagram for Frontend Application
+graph TD
+    user[User<br>A user of the application]
+    idp[Identity Provider<br>Provides authentication and authorization services]
+    frontend[Frontend Application<br>Provides user interface and interacts with backend API]
+    backend[Backend API<br>Provides data and functionalities to the frontend]
+    database[Database<br>Stores application data]
 
-    Person(user, "User", "A user of the application")
-    System_Ext(idp, "Identity Provider", "Provides authentication and authorization services")
-
-    System(frontend, "Frontend Application", "Provides user interface and interacts with backend API")
-
-    System_Ext(backend, "Backend API", "Provides data and functionalities to the frontend")
-    SystemDb(database, "Database", "Stores application data")
-
-    Rel(user, idp, "Authenticates with", "OIDC/OAuth2")
-    Rel(idp, frontend, "Provides access token to", "HTTPS")
-    Rel(user, frontend, "Uses", "HTTPS")
-    Rel(frontend, backend, "Uses", "REST API (JSON/HTTPS)")
-    Rel(backend, database, "Reads from and writes to", "JDBC/ODBC")
-
+    user <-->|Authenticates with OIDC/OAuth2| idp
+    user <-->|Uses HTTPS and access token| frontend
+    frontend <-->|Uses REST API JSON/HTTPS| backend
+    backend <-->|Reads from and writes to JDBC/ODBC| database
 ```
