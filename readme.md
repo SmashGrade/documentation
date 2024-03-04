@@ -12,8 +12,12 @@ To serve the documentation locally you will need to complete the below prerequis
 #### Python & pip
 If you do not yet have Python and its package Manager "pip" installed (you can check with `pip --version` in any terminal) please do so. Either via Browser https://www.python.org/downloads/ or your favorite package manager, for example on windows `winget install -e --id Python.Python.3.10`
 
-#### Material for MkDocs
-Next you need to install the Python Package Material for MkDocs with [pip](https://pip.pypa.io/en/stable/) by running: `pip install mkdocs-material` This will install all necessary dependencies. Make sure to re-open all terminals/code editors after the installation to make sure the newly installed MkDocs is available in Path.
+#### Required Packages for MkDocs
+Next you need to install the required Packages for this MkDocs with [pip](https://pip.pypa.io/en/stable/): 
+* Material `pip install mkdocs-material` 
+* Glightbox `pip install mkdocs-glightbox`
+
+This will install all necessary dependencies. Make sure to re-open all terminals/code editors after the installation to make sure the newly installed MkDocs is available in Path.
 
 
 ### Serve the documentation locally
