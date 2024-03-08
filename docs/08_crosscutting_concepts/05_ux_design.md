@@ -9,10 +9,8 @@ The goal of UX design is to enhance customer satisfaction and loyalty by improvi
 
 - **User Research:** Understanding target users, their needs, behaviors, and motivations to inform design decisions.
 - **Information Architecture:** Structuring and organizing information in the software to support usability and findability.
-- **Interaction Design:** Designing the interactive elements of the software to facilitate user actions and tasks.
-- **Usability:** Ensuring the product is easy to use and intuitive, minimizing user frustration.
-- **Visual Design:** Crafting the aesthetic aspects of the software to enhance its appeal and usability.
-- **Accessibility:** Ensuring that the software can be used by people with a wide range of abilities and disabilities.
+- **Usability (Principles + Wireframes):** Ensuring the product is easy to use and intuitive, minimizing user frustration.
+
 
 In essence, UX is about creating software products that are not only functional but also enjoyable and efficient to use, leading to positive experiences that fulfill user needs and objectives.
 
