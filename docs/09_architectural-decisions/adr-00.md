@@ -39,15 +39,3 @@ Reduces the time spent reinventing the wheel.
 Improves project quality because decisions have to be evaluated and explaned and cant be done at a whim.
 
 More time used on decisions because of the additional documentation effort needed.
-
-## ARD - Structure to Copy
-
-# Titel
-
-## Status - (Draft 🟡 |  Accepted 🟢 |  Obsolete 🔴)
-
-## Context
-
-## Desicion
-
-## Consequences
