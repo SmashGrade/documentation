@@ -24,7 +24,7 @@ GORM supports a wide range of database engines and is designed with scalability 
 
 For more detailed information about GORM  visit the following resources:
 
-[GORM Official Documentation](https://gorm.i)
+[GORM Official Documentation](https://gorm.io/index.html)
 
 [GORM GitHub Repository](https://github.com/go-gorm/gorm)
 
